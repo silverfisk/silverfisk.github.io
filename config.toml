@@ -25,8 +25,8 @@ pygmentsUseClasses = true # new add
     fixedbarContentAfter = "Thank You! Please share it if you like it→" # Add fixedbar content after click
 
     # Whether you want to hide copyright and credits in the footer.
-    hideCredits = false
-    hideCopyright = false
+    hideCredits = true
+    hideCopyright = true
 
     # Custom CSS
     custom_css = []
@@ -38,14 +38,14 @@ pygmentsUseClasses = true # new add
     rtl = false
 
     # Bottom sns share
-    snsShare = true # new add
+    snsShare = false # new add
     # Popular sns share
     # if you want add sns. please message!
-    enableTwitterShare = true  # new add
-    enableFacebookShare = true # new add
-    enableHatenaShare = true   # new add
-    enableLineShare = true     # new add
-    enableLinkedInShare = true # new add
+    enableTwitterShare = false  # new add
+    enableFacebookShare = false # new add
+    enableHatenaShare = false   # new add
+    enableLineShare = false     # new add
+    enableLinkedInShare = false # new add
 
     thumbnail = "images/tn.png" # default sns thumbnail
 
