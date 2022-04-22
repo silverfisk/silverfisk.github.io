@@ -21,8 +21,8 @@ pygmentsUseClasses = true # new add
     avatarurl = "images/avatar.jpg" # Contain the path of the optionnal avatar in the static folder.
 
     footercontent = "Enter a text here." # Add footer content
-    fixedbarContent = "Do you want to know me more private?→" # Add fixedbar content
-    fixedbarContentAfter = "Thank You! Please share it if you like it→" # Add fixedbar content after click
+    fixedbarContent = "Want to send me a tip?→" # Add fixedbar content
+    fixedbarContentAfter = "Thank You! Please send me moneros here it if you like it→ 47LGUansAZceAEcTag7h6oBPdxCR8AEXRerPYQHVVTD9jfSBoBz7hLA6z9jEJa49R4FRjEDVsG7Uj7X3EdFdgTxUUahfxja" # Add fixedbar content after click
 
     # Whether you want to hide copyright and credits in the footer.
     hideCredits = true
