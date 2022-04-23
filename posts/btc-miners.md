@@ -1,7 +1,6 @@
 ---
 title: "Btc Miners"
 date: 2022-04-22T18:07:07+02:00
-draft: true
 ---
 
 # BTC Mining
