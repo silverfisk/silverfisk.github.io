@@ -1,5 +1,5 @@
-baseurl = "https://silverfisk.github.io" # Hostname (and path) to the root.
-title = "Toms personal page" # Site title.
+baseurl = "https://linux-konsult.com"
+title = "linux-konsult.com" # Site title.
 theme = "coder-portfolio" # Set the theme.
 languagecode = "en" # The site’s language code used to generate RSS.
 defaultcontentlanguage = "en" # The default content language.
@@ -16,7 +16,7 @@ pygmentsUseClasses = true # new add
 [params] # theme parameters
     author = "Tom" # Author's name.
     info = "Site Reliability Engineer" # Author's job title or info.
-    description = "Toms personal website" # Site description.
+    description = "linux-konsult.com" # Site description.
     keywords = "blog,developer,esp8266,prometheus,grafana,bitcoin" # Site keywords.
     avatarurl = "images/avatar.jpg" # Contain the path of the optionnal avatar in the static folder.
 
