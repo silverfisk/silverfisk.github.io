@@ -1,6 +1,6 @@
 baseurl = "https://silverfisk.github.io" # Hostname (and path) to the root.
-title = "Tom Eklöf" # Site title.
-theme = "portfolio" # Set the theme.
+title = "Toms personal page" # Site title.
+theme = "coder-portfolio" # Set the theme.
 languagecode = "en" # The site’s language code used to generate RSS.
 defaultcontentlanguage = "en" # The default content language.
 
@@ -14,15 +14,15 @@ pygmentsUseClasses = true # new add
 # disqusShortname = "yourdiscussshortname" # Enable or disable Disqus.
 
 [params] # theme parameters
-    author = "Tom Eklöf" # Author's name.
-    info = "SITE RELIABILITY ENGINEER" # Author's job title or info.
-    description = "Tom personal website" # Site description.
-    keywords = "blog,developer,personal" # Site keywords.
+    author = "Tom" # Author's name.
+    info = "Site Reliability Engineer" # Author's job title or info.
+    description = "Toms personal website" # Site description.
+    keywords = "blog,developer,esp8266,prometheus,grafana,bitcoin" # Site keywords.
     avatarurl = "images/avatar.jpg" # Contain the path of the optionnal avatar in the static folder.
 
-    footercontent = "Enter a text here." # Add footer content
+    # footercontent = "Enter a text here." # Add footer content
     fixedbarContent = "Want to send me a tip?→" # Add fixedbar content
-    fixedbarContentAfter = "Thank You! Please send me moneros here it if you like it→ 47LGUansAZceAEcTag7h6oBPdxCR8AEXRerPYQHVVTD9jfSBoBz7hLA6z9jEJa49R4FRjEDVsG7Uj7X3EdFdgTxUUahfxja" # Add fixedbar content after click
+    fixedbarContentAfter = "Thank You! Now if there were just some kind of decentralized way of sending money..." # Add fixedbar content after click
 
     # Whether you want to hide copyright and credits in the footer.
     hideCredits = true
@@ -38,21 +38,19 @@ pygmentsUseClasses = true # new add
     rtl = false
 
     # Bottom sns share
-    snsShare = false # new add
+    snsShare = true
     # Popular sns share
     # if you want add sns. please message!
-    enableTwitterShare = false  # new add
-    enableFacebookShare = false # new add
-    enableHatenaShare = false   # new add
-    enableLineShare = false     # new add
-    enableLinkedInShare = false # new add
+    # enableTwitterShare = true
+    # enableFacebookShare = true
+    # enableHatenaShare = true
+    # enableLineShare = true
+    # enableLinkedInShare = true
 
-    thumbnail = "images/tn.png" # default sns thumbnail
+    thumbnail = "images/tn.png"
 
-    # Multilanguage mode
-    langseparator = "|" # Separates menus from language selectors when site is multilingual.
+    langseparator = "|"
 
-# Social links
 [[params.social]]
     name = "Github"
     icon = "fab fa-github"
@@ -64,6 +62,10 @@ pygmentsUseClasses = true # new add
     name = "Blog"
     weight = 1
     url  = "posts"
+[[menu.main]]
+    name = "Projects"
+    weight = 1
+    url  = "projects"
 [[menu.main]]
     name = "About"
     weight = 2
