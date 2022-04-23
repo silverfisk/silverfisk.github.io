@@ -6,10 +6,10 @@ categories: "Bitcoin"
 description: "Is it profitable to just buy one miner?"
 ---
 
-As trust is breaking down between western countries and the Russian Federation, some miners are in incredible pain at the moment. Many who has been hosting their miners in Russia may loose their hardware I expect!
+As trust is currently breaking down between countries, some miners experience incredible pain at the moment. Many who has been hosting their miners in Russia may loose their hardware I expect!
 
-As a result, there may be difficulties finding hosting in the United States as miners scramble to get their hardware to safer places.
-*Not your keys, not your bitcoin* as you say, but this concept may have be extended to __*your facility, not your miner*__. There _are_ dangers if you don't host your hardware yourself these days!
+As a result, there may be difficulties finding hosting in the United States as miners scramble to get their hardware to safer havens.
+*Not your keys, not your bitcoin* as you say, may now need to be extended to __*Not your facility, not your miner*__. There _are_ dangers if you don't host your hardware yourself these days!
 
 I am currently researching miner hosting companies and may come back on the topic.
 

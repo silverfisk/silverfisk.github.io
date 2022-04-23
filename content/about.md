@@ -7,9 +7,8 @@ description = "about"
 ---------------------------
 ---------------------------
 
-I work as a Tech Lead in a newly formed SRE team for a cloud base
-backend for autonomous semitrucks.
-We have been working mainly with AWS cloud services, but are now focusing on a transition of a Cloud Native observability stack.
+I work as a Tech Lead in a newly formed SRE team for a cloud based backend for autonomous semitrucks.
+With a previous focus strongly in favor of AWS cloud services, We now focus on transitioning to a Cloud Native observability stack.
 
 In order to always learn new things I try to stay junior and humble.
 
@@ -24,8 +23,8 @@ In order to always learn new things I try to stay junior and humble.
 
  Scania R&D | _Remote_
 
-* Using Terrafom for infrastructure automation
 * Evangelise and help teams implement SLOs & SLIs
+* Using Terrafom for infrastructure automation
 * 70% cost optimiziation of Kubernetes klusters with spot instance pricing
 * Showcase Grafana with augmented SVG dashboard for metrics contextualization
 * Transition GitLab CI runners to kubernetes
