@@ -70,3 +70,6 @@ pygmentsUseClasses = true # new add
     name = "About"
     weight = 2
     url = "about"
+
+# [markup.goldmark.renderer]
+# unsafe = true
