@@ -68,6 +68,10 @@ pygmentsUseClasses = true # new add
     weight = 2
     url  = "posts"
 [[menu.main]]
+    name = "Links"
+    weight = 9
+    url  = "links"
+[[menu.main]]
     name = "About"
     weight = 10
     url = "about"
