@@ -72,9 +72,9 @@ pygmentsUseClasses = true # new add
     weight = 9
     url  = "links"
 [[menu.main]]
-    name = "About"
+    name = "Resume"
     weight = 10
-    url = "about"
+    url = "https://whoami.linux-konsult.com"
 
 # [markup.goldmark.renderer]
 # unsafe = true
