@@ -7,7 +7,7 @@ date = "2022-04-20"
 
 ## Prometheus monitored freezer
 
-{{% portfolio image="/img/prom_freezer.png" alt="Prometheus Freezer" %}}
+{{% portfolio image="/img/esp01-usb-programmer.png" alt="Prometheus Freezer" %}}
 
 ## Monitor a freezer with Prometheus and Grafana
 
