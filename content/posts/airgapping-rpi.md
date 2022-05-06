@@ -70,3 +70,18 @@ sudo usermod -a -G dialout $(whoami)    # Give yourself access to the serial dev
 newgrp
 screen /dev/ttyUSB0 115200
 ```
+
+## Copy files over serial connection
+
+All files you want to copy have to be base64 encoded on your desktop. To copy myfile:
+
+```sh
+base64 myfile > myfile.b64
+```
+1. Open the screen session ```screen /dev/ttyUSB0 115200```
+2. Type *Ctrl-A* then ```:readreg p /path/to/myfile.b64``` 
+3. Then, still in screen, on the target RPi:
+```sh
+base64 -d > myfile
+```
+4. Type *Ctrl-D*
