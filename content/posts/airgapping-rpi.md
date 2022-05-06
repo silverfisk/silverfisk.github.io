@@ -1,11 +1,10 @@
 +++ 
-draft = true
 date = 2022-05-05T22:16:17+02:00
 title = "Airgap your Raspberry Pi on a shoestring budget"
 slug = "" 
-tags = []
+tags = "security"
 categories = []
-thumbnail = "images/tn.png"
+thumbnail = "/img/rpi-logo.png"
 description = "Airgap install a Raspberry Pi with a cheap ESP-01 Programmer"
 +++
 
