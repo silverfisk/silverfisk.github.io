@@ -39,7 +39,7 @@ This is what you need to configure your raspberry pi:
 
 ## Set up
 
-Connect a jumper wire in each one of the four pins (TX, GND, 3V+ % RX).
+Connect a jumper wire in each one of the four pins (TX, GND, 3V+ & RX).
 {{% portfolio image="/img/ESP01-pins.png" alt="Programmer Pins" %}}
 
 {{% /portfolio %}}
