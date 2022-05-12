@@ -57,6 +57,17 @@ Flash the Raspberry Pi image onto the SD card. Re-mount the SD card and edit ```
 enable_uart=1
 ```
 
+Now generate a password in userconf.txt (or use something else if you prefer). You will use the my_user and my_pw  to create a user & password on the RPi. Take note of these as you'll need it to log on to the RPi later.
+```sh
+ $ export my_user="pi"
+ $ export my_pw=$(< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-16};echo)
+ $ export my_hash=$(echo $my_pw |openssl passwd -6 -stdin)
+ $ echo ${my_user}:${my_hash} > userconf.txt
+```
+
+Copy the userconf.txt to the same boot partition as the config.txt file.
+
+
 * Put the SD card in the RPi
 * Connect the USB serial interface to your computer. It will power up your RPi directly.
 
