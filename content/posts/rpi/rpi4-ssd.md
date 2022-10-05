@@ -75,7 +75,7 @@ pi@raspberrypi:~ $ sudo sed -i "s/${OLDUUID}/LABEL=rootfs-SSD/g" /mnt/etc/fstab 
 Now configure the machine to prioritize USB boot first
 
 ```sh
-tom@k8s:~ $ sudo raspi-config
+pi@raspberrypi:~ $ sudo raspi-config
 ```
 
 Advanced Options > Boot Order > USB Boot
@@ -86,9 +86,3 @@ Advanced Options > Boot Order > USB Boot
 {{% portfolio image="/img/rpi4-stp4.png" alt="Step4" %}}{{% /portfolio %}}
 
 Shut down your raspberry and take out the SD card before powering it on again.
-
-
-{{% portfolio image="/img/rpi4-stp1.png" alt="Step1" %}}{{% /portfolio %}}
-{{% portfolio image="/img/rpi4-stp5.png" alt="Step5" %}}{{% /portfolio %}}
-
-
