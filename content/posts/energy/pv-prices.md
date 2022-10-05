@@ -36,13 +36,13 @@ __*You may need to prepare for some power outages this winter*__.
 	  	- 11075.7 SEK/kWh installed
 	  
 ### 7 KW solar cells, 7 kWh battery
-	- 2 batteryer (36106 SEK)
+	- 2 batteries (36106 SEK)
 	- 1 inverter
 	- 17 solar cells (47464 SEK)
-	  => 101730 SEK ink. moms för hybrid
+	  => 101730 SEK ink. moms for hybrid
 	  	- 14.5 SEK/W inst. solar cell
 	  	- 14533 SEK/kWh installed
-	  => 90322 SEK ink. momd för off-grid
+	  => 90322 SEK ink. momd for off-grid
 	  	- 12.9 SEK/W inst. solar cell
 	  	- 12903 SEK/kWh installed
 
@@ -50,7 +50,7 @@ __*You may need to prepare for some power outages this winter*__.
 
 ## A hybrid grid / off grid price comparisy
 
-Prices from pvshop.eu, with 1.25% VAT and converted from euro to SEK.
+Prices from https://pvshop.eu - with 1.25% VAT and converted from euro to SEK.
 
 ### PYLONTECH - US3000C BATTERY MODULE 3,5KWH / 48V
 
