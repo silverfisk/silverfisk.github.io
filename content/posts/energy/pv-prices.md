@@ -3,13 +3,15 @@ title: "Solar energy prices and storage"
 date: 2022-10-05T09:50:07+02:00
 tags: "solar electricity energy sovereignty"
 categories: "Energy"
-description: "Is it profitable to just buy one miner?"
+description: "Notes of current solar and battery prices"
 ---
 
 Trust is breaking down between european countries. We may have the first european war winter in a scale not seen since the second world war...
 
 As a result, we've seen a steep increase of energy prices, and we may not have seen the worst so far. Another "solution" mentioned by our great leaders are to instigate price controls, and we all know what that means: power outages when the demand is not allowed to be regulated by pricing!
 __*You may need to prepare for some power outages this winter*__. 
+
+I have no affiliation with the linked web pages and do not used them. This is just my private notes of own price research.
 
 
 # Summary
