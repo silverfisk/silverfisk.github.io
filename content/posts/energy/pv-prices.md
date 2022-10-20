@@ -48,9 +48,9 @@ __*You may need to prepare for some power outages this winter*__.
 
 
 
-## A hybrid grid / off grid price comparisy
+## A hybrid grid / off grid price comparison
 
-Prices from https://pvshop.eu - with 1.25% VAT and converted from euro to SEK.
+Prices from https://pvshop.eu - with 25% VAT and converted from euro to SEK.
 
 ### PYLONTECH - US3000C BATTERY MODULE 3,5KWH / 48V
 
