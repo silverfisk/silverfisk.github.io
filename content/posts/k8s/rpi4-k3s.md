@@ -8,8 +8,11 @@ thumbnail = "/img/rpi-logo.png"
 description = "How to install a low footprint kubernetes on a single node Raspberry Pi 4"
 +++
 
+
 Disk intensive applications such as kubernetes can run on Raspberry Pi 4, but you need to [migrate from the SD card to an SSD drive](https://linux-konsult.com/posts/rpi/rpi4-ssd/).
 Trust me, you don't want to run this from your SD card. I tried...
+
+Warning: I have noted down the steps taken, there may be some additional steps you need to take to get everything working. If so let me now through [GitHub](https://github.com/silverfisk/silverfisk.github.io/blob/main/content/posts/k8s/rpi4-k3s.md)
 
 ## Preparations
 
