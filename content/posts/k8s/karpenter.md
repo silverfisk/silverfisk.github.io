@@ -61,13 +61,3 @@ kubeletConfiguration:
       nodefs.inodesFree: 2m
 ```
 
-----
-
-Setting this would also taint the node with ```node.kubernetes.io/disk-pressure```. Given this, the node is tainted so no new CI pods is started, a new instance spins up with enough disk storage to acceppt the new jobs.
-
-```yaml
-
-taints:
-    - key: node.kubernetes.io/disk-pressure
-      effect: NoSchedule
-```
