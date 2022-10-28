@@ -41,23 +41,29 @@ Setting these values may actually kill some pods and their CI jobs as a last res
 Before any jobs are evicted because of DiskPressure, the kubelet will try to reclaim resources by culling dead pods and images.
 
 ```yaml
-kubeletConfiguration:
-      ephemeral-storage: 15Gi
-    kubeReserved:
-      cpu: 200m
-      memory: 100Mi
-      ephemeral-storage: 3Gi
-    evictionHard:
-      memory.available: 5%
-      nodefs.available: 10%
-      nodefs.inodesFree: 10%
-    evictionSoft:
-      memory.available: 500Mi
-      nodefs.available: 15%
-      nodefs.inodesFree: 15%
-    evictionSoftGracePeriod:
-      memory.available: 3m
-      nodefs.available: 1m30s
-      nodefs.inodesFree: 2m
+apiVersion: karpenter.sh/v1alpha5
+kind: Provisioner
+metadata:
+  name: default
+<...>
+spec:
+  kubeletConfiguration:
+        ephemeral-storage: 15Gi
+      kubeReserved:
+        cpu: 200m
+        memory: 100Mi
+        ephemeral-storage: 3Gi
+      evictionHard:
+        memory.available: 5%
+        nodefs.available: 10%
+        nodefs.inodesFree: 10%
+      evictionSoft:
+        memory.available: 500Mi
+        nodefs.available: 15%
+        nodefs.inodesFree: 15%
+      evictionSoftGracePeriod:
+        memory.available: 3m
+        nodefs.available: 1m30s
+        nodefs.inodesFree: 2m
 ```
 
