@@ -45,7 +45,7 @@ Check if the cluster already has a kubeletConfiguration:
 
 ## Configuration knobs
 
-Setting these values may actually kill some pods and their CI jobs as a last resort. In our setup the most common issue of full disks are when very CI jobs are executed in very big container images.
+Setting these values may actually kill some pods and their CI jobs as a last resort. In our setup the most common issue of full disks are when very CI jobs are executed in very big container images. Naturally it should be investigated if more node disk space should be added as a preventive solution, since this is more a way to handle node scaling *if the disks fill up in spite of the preventive actions already taken*.
 
 Before any jobs are evicted because of DiskPressure, the kubelet will try to reclaim resources by culling dead pods and images.
 
