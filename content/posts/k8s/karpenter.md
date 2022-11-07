@@ -1,26 +1,34 @@
+
+
+
 +++ 
 date = 2022-10-27T14:30:00+02:00
-title = "Let karpenter just-in-time scheduler manage disk pressure"
+title = "Let karpenters just-in-time scheduler manage disk pressure"
 slug = "" 
 tags = "k8s, GitLab, GitOps, karpenter"
 categories = []
 thumbnail = "/img/karpenter-logo.png"
-description = "Let karpenter just-in-time scheduler manage disk pressure"
+description = "Kapacity planning in kubernetes"
 +++
+
+
 
 ## Overview
 ----
-Karpenter is used for automatic rightscaling (and rightsizing) kubernetes nodes in a cluster.
+
+It can be challenging to do capacity planning in kubernetes.
+Karpenter can be used for automatic rightscaling (and rightsizing) kubernetes nodes in an EKS cluster, but it usually only handle CPU and memory. We had an issue where GitLab CI jobs quickly filled up node storage. The node disk usage was big enough to almost fill the disk to 98-99%. The CI job itself did not fail, but parallell jobs on the same node would.
+
+GitLab creates a new pod for each CI job.
 
 For this the ```Provisioner``` kind is used to configure the just-in-time node scheduler.
 
-An issue we have is that GitLab CI jobs fill up node storage. GitLab creates a new pod for each CI job.
-
 This lets karpenter configure the nodes to automatically perform garbage collection, and taint itself to avoid further pod scheduling. As a last resort it will kill greedy CI jobs to keep the cluster as a whole more consistent and performant.
-
+{{%portfolio image=/img/k8s_rightsizing.png %}}
 
 ### Karpenter kubelet Configuration
 ----
+
 
 The idea here is to let Karpenter set a kubeletConfiguration, so the [kubelet](https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/) starts the [Node-pressure Eviction](https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/) process to proactively terminate pods to reclaim resources on node.
 
@@ -28,6 +36,7 @@ This may fail some GitLab CI jobs when node disks are full, but it also reduce t
 
 
 Check if the cluster already has a kubeletConfiguration:
+{{% /portfolio %}}
 
 ```shell
 [localhost]$ kubectl get provisioners.karpenter.sh default  -oyaml | yq .spec.kubeletConfiguration
@@ -66,4 +75,5 @@ spec:
         nodefs.available: 1m30s
         nodefs.inodesFree: 2m
 ```
+
 
