@@ -17,13 +17,13 @@ description = "Kapacity planning in kubernetes"
 ----
 
 It can be challenging to do capacity planning in kubernetes.
-Karpenter can be used for automatic rightscaling (and rightsizing) kubernetes nodes in an EKS cluster, but it usually only handle CPU and memory. We had an issue where GitLab CI jobs quickly filled up node storage. The node disk usage was big enough to almost fill the disk to 98-99%. The CI job itself did not fail, but parallell jobs on the same node would.
+Karpenter can be used for automatic rightscaling (and rightsizing) of kubernetes nodes in an EKS cluster, but it usually only handle CPU and memory. We had an issue where GitLab CI jobs quickly filled up node storage. The node disk usage was big enough to almost fill the disk to 98-99%. The CI job itself did not fail, but parallell jobs sheduled on the same node sometimes would.
 
 GitLab creates a new pod for each CI job.
 
-For this the ```Provisioner``` kind is used to configure the just-in-time node scheduler.
+For this the ```Provisioner``` kind is used to configure the just-in-time node scheduler to place bids for new (or bigger) spot instance nodes. In addition to the better ROI on the cluster, it also improve Cloud Sustainability targets such as [SUS05-BP01](https://docs.aws.amazon.com/wellarchitected/latest/sustainability-pillar/sus_sus_hardware_a2.html) to use the minimum amount of hardware to meet your needs if you follow the new AWS Well Architected Sustaninability Pillar.
 
-This lets karpenter configure the nodes to automatically perform garbage collection, and taint itself to avoid further pod scheduling. As a last resort it will kill greedy CI jobs to keep the cluster as a whole more consistent and performant.
+This lets karpenter configure the nodes to automatically perform garbage collection, and taint itself to avoid further pod scheduling. As a last resort it will kill greedy CI jobs to keep the cluster as a whole more consistent, performant and stable.
 {{%portfolio image=/img/k8s_rightsizing.png %}}
 
 ### Karpenter kubelet Configuration
