@@ -16,10 +16,11 @@ I am currently researching miner hosting companies and may come back on the topi
 Small players may have a better investment buying mining stocks as it stands...
 
 ## Bitmain Antminer S19XP
-
+{{%portfolio image=/img/bitcon_taproot.png %}}
 The S19XP seem to have outstanding efficency if you can get a hold of one. While Intel is joning the race and may disrupt the mining scene in a couple of hardware iterations, this device seem to be the best bet at the moment.
 
 | Hashrate (TH/s) | Power (W) | efficency (W/TH) |Cost of production 1 BTC |
 |--|--| -- | -- |
 | 140 | 3010 | 21.5 | 11257 |
 
+{{% /portfolio %}}
