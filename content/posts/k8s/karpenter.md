@@ -21,16 +21,16 @@ Karpenter can be used for automatic rightscaling (and rightsizing) of kubernetes
 
 GitLab creates a new pod for each CI job.
 
-For this the ```Provisioner``` kind is used to configure the just-in-time node scheduler to place bids for new (or bigger) spot instance nodes. In addition to the better ROI on the cluster, it also improve Cloud Sustainability targets such as [SUS05-BP01](https://docs.aws.amazon.com/wellarchitected/latest/sustainability-pillar/sus_sus_hardware_a2.html) to use the minimum amount of hardware to meet your needs if you follow the new AWS Well Architected Sustaninability Pillar.
+For this the ```Provisioner``` kind is used to configure the just-in-time node scheduler to place bids for new (or bigger) spot instance nodes. In addition to the better ROI on the cluster, it also improve Cloud Sustainability targets such as [SUS05-BP01](https://docs.aws.amazon.com/wellarchitected/latest/sustainability-pillar/sus_sus_hardware_a2.html) to use the minimum amount of hardware to meet your needs if you follow the new [AWS Well Architected Sustaninability Pillar](https://docs.aws.amazon.com/wellarchitected/latest/sustainability-pillar/sustainability-pillar.html).
 
-This lets karpenter configure the nodes to automatically perform garbage collection, and taint itself to avoid further pod scheduling. As a last resort it will kill greedy CI jobs to keep the cluster as a whole more consistent, performant and stable.
+This lets karpenter configure node to automatically perform garbage collection, and taint itself to avoid further pod scheduling. As a last resort it will kill greedy CI jobs to keep the cluster as a whole more consistent, performant and stable.
 {{%portfolio image=/img/k8s_rightsizing.png %}}
 
 ### Karpenter kubelet Configuration
 ----
 
 
-The idea here is to let Karpenter set a kubeletConfiguration, so the [kubelet](https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/) starts the [Node-pressure Eviction](https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/) process to proactively terminate pods to reclaim resources on node.
+The idea here is to let Karpenter set a kubeletConfiguration, so the [kubelet](https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/) starts the [Node-pressure Eviction](https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/) process to proactively terminate pods to reclaim resources on the affected node.
 
 This may fail some GitLab CI jobs when node disks are full, but it also reduce the blast radius when a job fill up disks for other jobs.
 
