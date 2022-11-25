@@ -2,7 +2,7 @@
 date = 2022-07-30T13:00:00+02:00
 title = "Kubernetes with k3s on Raspberry Pi 4"
 slug = "" 
-tags = "raspberry pi, k8s, k3s"
+tags = [ "raspberry", "pi", "k8s", "k3s" ]
 categories = []
 thumbnail = "/img/rpi-logo.png"
 description = "How to install a low footprint kubernetes on a single node Raspberry Pi 4"
