@@ -20,7 +20,7 @@ pygmentsUseClasses = true # new add
     keywords = "blog,devops,sustainability,esp8266,prometheus,grafana" # Site keywords.
     avatarurl = "images/avatar.jpg" # Contain the path of the optionnal avatar in the static folder.
 
-    footercontent = "Enter a text here." # Add footer content
+    #footercontent = "Enter a text here." # Add footer content
     fixedbarContent = "Contact details " # Add fixedbar content
     fixedbarContentAfter = "tom@linux-konsult.com" # Add fixedbar content after click
 
