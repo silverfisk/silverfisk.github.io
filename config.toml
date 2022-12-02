@@ -15,14 +15,14 @@ pygmentsUseClasses = true # new add
 
 [params] # theme parameters
     author = "Tom" # Author's name.
-    info = "A senior consultant with over 15 years of experience in Linux systems, Open Source software, and DevOps practices." # Author's job title or info.
+    info = "Platform engineer with over 15 years experience in Linux systems and DevOps practices." # Author's job title or info.
     description = "linux-konsult.com" # Site description.
-    keywords = "blog,developer,esp8266,prometheus,grafana,bitcoin" # Site keywords.
+    keywords = "blog,devops,sustainability,esp8266,prometheus,grafana" # Site keywords.
     avatarurl = "images/avatar.jpg" # Contain the path of the optionnal avatar in the static folder.
 
-    # footercontent = "Enter a text here." # Add footer content
-    # fixedbarContent = "Want to send me a tip?→" # Add fixedbar content
-    # fixedbarContentAfter = "Thank You! Now if there were just some kind of decentralized way of sending money..." # Add fixedbar content after click
+    footercontent = "Enter a text here." # Add footer content
+    fixedbarContent = "Contact details " # Add fixedbar content
+    fixedbarContentAfter = "tom@linux-konsult.com" # Add fixedbar content after click
 
     # Whether you want to hide copyright and credits in the footer.
     hideCredits = true
@@ -57,15 +57,22 @@ pygmentsUseClasses = true # new add
     weight = 1
     url = "https://github.com/silverfisk/"
 
+
+[[params.social]]
+    name = "Linkedin"
+    icon = "fab fa-linkedin"
+    weight = 2
+    url = "https://www.linkedin.com/in/tomeklof/"
+
 # Menu links
 
 [[menu.main]]
     name = "Projects"
-    weight = 1
+    weight = 2
     url  = "projects"
 [[menu.main]]
     name = "Blog"
-    weight = 2
+    weight = 1
     url  = "posts"
 [[menu.main]]
     name = "Links"
