@@ -21,7 +21,7 @@ So we cannot remove energy, because that would also remove the capacity for huma
 
 Regional emission factors are used to calculate the carbon emissions associated with the generation of electricity in a specific region. These factors take into account the mix of energy sources used in the region, such as coal, natural gas, renewable energy, etc. By using regional emission factors, you can more accurately estimate the carbon emissions of your electricity-consuming tasks, and choose the region with the lowest emissions for your tasks.
 
-For example, the website [electricitymaps.com](https://electricitymaps.com) provides a map that shows the carbon intensity of electricity generation in different regions around the world. You can use this map to compare the emissions of different regions and choose the one with the lowest emissions for your tasks. 
+For example, the website [electricitymaps.com](https://app.electricitymaps.com/map) provides a map that shows the carbon intensity of electricity generation in different regions around the world. You can use this map to compare the emissions of different regions and choose the one with the lowest emissions for your tasks. 
 
 In addition to choosing the most efficient region, you can also use regional emission factors to compare the emissions of different energy sources within a region. For example, you may find that using renewable energy sources in a region has lower emissions than using fossil fuels. This information can help you make more sustainable choices for your electricity-consuming tasks.
 
