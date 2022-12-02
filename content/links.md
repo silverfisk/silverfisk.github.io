@@ -12,9 +12,9 @@ Gartners overview on Platform Engineering
 
 ----
 
-[Why putting a pane of glass on a pile of sh*t doesn’t solve your problem](https://platformengineering.org/blog/why-putting-a-pane-of-glass-on-a-pile-of-shit-doesnt-solve-your-problem)
+[GaiaGens recommendations to improve your climate impact](https://gaiagen.eu/recommendations)
 ----
-Sometimes better observability will just help you see problems you know are already there.
+Some methods and principles to boost the future of sustainable developers
 
 ----
 
