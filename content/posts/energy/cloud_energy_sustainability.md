@@ -44,3 +44,9 @@ Karpenter is a tool for managing and optimizing Kubernetes clusters on Amazon We
 One of the key features of Karpenter is its ability to help you rightsize your clusters and use spot instances. This can help you avoid overprovisioning or underprovisioning, which can lead to wasted resources or poor performance.
 
 Karpenter can also help you use spot instances to save cost on AWS. Spot instances are spare compute capacity that AWS offers at a discounted price, but which can be terminated by AWS if the capacity is needed elsewhere. Karpenter can help you use spot instances in your clusters by automatically replacing terminated instances with new ones, and by providing tools for managing the availability and performance of your spot instances.
+
+
+----
+**Recognition**
+
+This article was inspired by [GaiaGen](https://gaiagen.eu/recommendations).
