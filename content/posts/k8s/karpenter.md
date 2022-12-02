@@ -16,23 +16,21 @@ description = "Kapacity planning in kubernetes"
 ## Overview
 ----
 
-It can be challenging to do capacity planning in kubernetes.
-Karpenter can be used for automatic rightscaling (and rightsizing) of kubernetes nodes in an EKS cluster, but it usually only handle CPU and memory. We had an issue where GitLab CI jobs quickly filled up node storage. The node disk usage was big enough to almost fill the disk to 98-99%. The CI job itself did not fail, but parallell jobs sheduled on the same node sometimes would.
+Capacity planning in Kubernetes can be challenging.
+Karpenter is useful for automatically rightscaling and rightsizing Kubernetes nodes in an EKS cluster, but it usually only considers CPU and memory usage. We experienced difficulties troubleshooting this issue because the node storage was not full at the time we checked it. The disk usage would spike to almost capacity (98-99%) during the execution of GitLab CI jobs, then decrease after the job was completed. This made it difficult to identify the cause of the issue.
 
-GitLab creates a new pod for each CI job.
+To address this issue, we used the```Provisioner``` kind to configure the just-in-time node scheduler to place bids for new (or larger) spot instance nodes. In addition to providing a better ROI on the cluster, this approach also helps to improve Cloud Sustainability targets, such as [SUS05-BP01](https://docs.aws.amazon.com/wellarchitected/latest/sustainability-pillar/sus_sus_hardware_a2.html), by using the minimum amount of hardware needed to meet your needs if you follow the new [AWS Well Architected Sustaninability Pillar](https://docs.aws.amazon.com/wellarchitected/latest/sustainability-pillar/sustainability-pillar.html).
 
-For this the ```Provisioner``` kind is used to configure the just-in-time node scheduler to place bids for new (or bigger) spot instance nodes. In addition to the better ROI on the cluster, it also improve Cloud Sustainability targets such as [SUS05-BP01](https://docs.aws.amazon.com/wellarchitected/latest/sustainability-pillar/sus_sus_hardware_a2.html) to use the minimum amount of hardware to meet your needs if you follow the new [AWS Well Architected Sustaninability Pillar](https://docs.aws.amazon.com/wellarchitected/latest/sustainability-pillar/sustainability-pillar.html).
-
-This lets karpenter configure node to automatically perform garbage collection, and taint itself to avoid further pod scheduling. As a last resort it will kill greedy CI jobs to keep the cluster as a whole more consistent, performant and stable.
+This lets karpenter configure nodes to automatically perform garbage collection, and taint itself to avoid further pod scheduling. As a last resort it will kill greedy CI jobs to keep the cluster as a whole more consistent, performant and stable.
 {{%portfolio image=/img/k8s_rightsizing.png %}}
 
 ### Karpenter kubelet Configuration
 ----
 
 
-The idea here is to let Karpenter set a kubeletConfiguration, so the [kubelet](https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/) starts the [Node-pressure Eviction](https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/) process to proactively terminate pods to reclaim resources on the affected node.
+One way to address the issue of full disks on Kubernetes nodes is to use Karpenter to set a kubeletConfiguration. This allows the [kubelet](https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/) to start the [Node-pressure Eviction](https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/) process, which proactively terminates pods to reclaim resources on the affected node.
 
-This may fail some GitLab CI jobs when node disks are full, but it also reduce the blast radius when a job fill up disks for other jobs.
+While this approach may cause some GitLab CI jobs to fail when node disks are full, it also reduces the impact on other jobs by limiting the "blast radius" of a job that fills up disks. In general, it can help to keep the cluster more consistent, performant, and stable.
 
 
 Check if the cluster already has a kubeletConfiguration:
@@ -45,9 +43,9 @@ Check if the cluster already has a kubeletConfiguration:
 
 ## Configuration knobs
 
-Setting these values may actually kill some pods and their CI jobs as a last resort. In our setup the most common issue of full disks are when very CI jobs are executed in very big container images. Naturally it should be investigated if more node disk space should be added as a preventive solution, since this is more a way to handle node scaling *if the disks fill up in spite of the preventive actions already taken*.
+Setting these values may cause some pods and their CI jobs to be killed as a last resort. In our setup, the most common issue with full disks was CI jobs executing in very large container images which caused the image storage to fill up. It is important to investigate whether adding more node disk space would be a more effective preventive solution, as this is more of a way to handle node scaling if the disks fill up despite preventive actions already being taken.
 
-Before any jobs are evicted because of DiskPressure, the kubelet will try to reclaim resources by culling dead pods and images.
+Before any jobs are evicted due to DiskPressure, the kubelet will attempt to reclaim resources by culling dead pods and images.
 
 ```yaml
 apiVersion: karpenter.sh/v1alpha5
