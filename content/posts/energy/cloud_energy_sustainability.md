@@ -6,13 +6,17 @@ categories: ["Energy"]
 description: "Energy, prosperity and mindset opf sustainability in the cloud"
 ---
 
+
 Energy is a key factor for human prosperity. It is essential for providing the power needed for transportation, heating and cooling, lighting, and other daily activities. It also plays a crucial role in supporting economic growth and development, as it is needed to run factories, power plants, other infrastructure, and services.
+
+{{% portfolio image="/img/europe-grid.png" alt="Europe" %}}
 
 There is a wealth of data that supports the importance of energy for human prosperity. For example, the World Bank reports that access to modern energy services is a key factor in reducing poverty and promoting economic growth. The International Energy Agency (IEA) also finds that improving access to modern energy can have a major impact on health, education, and other indicators of human development.
 
 Additionally, studies have shown that increasing access to modern energy can have a positive impact on a variety of economic and social indicators, including gross domestic product (GDP), employment, and life expectancy.
 
 Overall, the data clearly shows that energy is essential for human prosperity, and that access to modern, reliable energy is a key factor in promoting economic growth and development.
+{{% /portfolio %}}
 
 So we cannot remove energy, because that would also remove the capacity for human prosperity. But we all need to understand that this energy is precious. Here I will describe how this mindset can be used to improve delivery of cloud based work loads.
 
@@ -37,13 +41,16 @@ This is much easier, less error prone and provides better quality than manually 
 
 ## Rightscaling
 
+
 Rightsizing can be challenging in the cloud, as workloads and usage patterns can change dynamically and unpredictably. However, using tools and techniques such as [karpenter](https://karpenter.sh/), it is possible to continuously monitor and adjust the cloud environment to ensure optimal performance, environmental footprint and cost.
+{{% portfolio image="/img/rightsizing.png" alt="Rightsizing" %}}
 
 Karpenter is a tool for managing and optimizing Kubernetes clusters on Amazon Web Services (AWS). It allows you to easily provision and manage your clusters, and to optimize their performance and cost.
 
 One of the key features of Karpenter is its ability to help you rightsize your clusters and use spot instances. This can help you avoid overprovisioning or underprovisioning, which can lead to wasted resources or poor performance.
 
 Karpenter can also help you use spot instances to save cost on AWS. Spot instances are spare compute capacity that AWS offers at a discounted price, but which can be terminated by AWS if the capacity is needed elsewhere. Karpenter can help you use spot instances in your clusters by automatically replacing terminated instances with new ones, and by providing tools for managing the availability and performance of your spot instances.
+{{% /portfolio %}}
 
 
 ----
