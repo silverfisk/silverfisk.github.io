@@ -9,33 +9,33 @@ description: "Fluent Bit: Isolating pod logs in a multitenant EKS cluster"
 # Overview
 ----
 
-How to isolate log access in a multitenant AWS EKS cluster between tenants. I'm writing a small post here in case some one else is searching for a similar solution since I could not find any working examples or documentation on this.
+In this post, we discuss how to isolate log access in a multitenant AWS EKS cluster between tenants. This solution is intended for those who need to give customer team members access to their own microservice log output without replicating the log storage out to other logging solutions or out of the AWS account to minimize the risk of data leakage.
 
 
 ## Situation
 
 We have a multi-tenant EKS Kubernetes cluster that is used as an internal development platform. Development teams use the platform to deploy their microservices. While the developers do not have access to the AWS account hosting the cluster, they do need access to their own log files. These log files are stored in AWS CloudWatch Logs in the EKS AWS account, to which the developers do not have access. However, the customer team does have their own AWS account.
-
+{{% portfolio image="/img/fluent-bit.png" alt="FluentBit" %}}
 By default, the cluster uses a Fluent Bit daemonset to forward all pod logs to the same Log Group in AWS CloudWatch Logs. This configuration allows the customer team to access their logs, even though the developers cannot log in to the EKS AWS account.
-
+{{% /portfolio %}}
 
 ## Task
 
-Give customer team members access to their own microservice log output, without replicating the log storage out to other logging solutions, and/or out of the AWS account to minimise risk of data leakage. It is also important that other teams using the same multitenant cluster cannot access each others logs.
-System pods and similar should log to a common Log Group so the Platform Engineering team have easy access to logs not belonging to development teams. This also ensures separation of concerns and least privilege, so that platform engineers cannot read application output unless given access to those log groups.
+The goal is to give customer team members access to their own microservice log output, without replicating the log storage out to other logging solutions, and/or out of the AWS account to minimize the risk of data leakage. It is also important that other teams using the same multitenant cluster cannot access each other's logs. System pods and similar should log to a common Log Group so the Platform Engineering team has easy access to logs not belonging to development teams. This also ensures separation of concerns and least privilege, so that platform engineers cannot read application output unless given access to those log groups.
 
 ## Action
 
-**First short overview of how Fluent Bit works in kubernetes:**
-A Fluent Bit daemonset is configured to ingest logs on each node, each log source is defined as an ```[INPUT]``` section in the fluent configuration and every event always have to consist of a _timestamp_ and a _message_, and then it is _tagged_ as it comes in to its input.
+**Fluent Bit Overview**
 
-If any processing of such an event needs to be done, this is done with a ```[FILTER]``` block. This can be used to reshape, drop or even annotate the event with metadata.
+A Fluent Bit daemonset is configured to ingest logs on each node. Each log source is defined as an [INPUT] section in the fluent configuration, and every event always has to consist of a timestamp and a message, and then it is tagged as it comes in to its input.
 
-There are other features such as parsers, storage and routers, but they will not be mentioned here. However the last part to configure is an ```[OUTPUT]```
+If any processing of such an event needs to be done, this is done with a [FILTER] block. This can be used to reshape, drop, or even annotate the event with metadata.
+
+There are other features such as parsers, storage, and routers, but they will not be mentioned here. The last part to configure is an [OUTPUT].
 
 #### Configuration
 
-Say that you have a standard input. It is standard, but I will show it here just to have a working example. Se here that we ingest container logs and give the events the ```kube.*``` tag:
+Here is a standard input configuration for Fluent Bit. It ingests container logs and gives the events the kube.* tag:
 
 ```
 [INPUT]
@@ -63,8 +63,7 @@ Next step is crucial, letting the Fluent Bit [kubernetes](https://docs.fluentbit
     K8S-Logging.Exclude On
 ```
 
-We then let the [cloudwatch_logs](https://docs.fluentbit.io/manual/pipeline/outputs/cloudwatch) output use the ```log_group_template``` key to define a unique log group based on _namespace_ and other labels seen below. For us, this combination of labels would correspond so that it only resolves for customer pods. All other logs will fall back to the ```log_group_name``` and end up in a cluster application log.
-
+To isolate logs and limit access to information based on least privilege, we use the cloudwatch_logs output and the log_group_template key to define a unique log group based on namespace and other labels. For our purposes, this combination of labels is only relevant for customer pods. All other logs will fall back to the log_group_name and be stored in the cluster application log.
 ```
 [OUTPUT]
     Name                cloudwatch_logs
@@ -78,7 +77,7 @@ We then let the [cloudwatch_logs](https://docs.fluentbit.io/manual/pipeline/outp
     log_retention_days  90
 ```
 
-__But there's one last catch!__ If you read the documentation for _log_group_template_ carefully, a warning is logged each time a fallback is made. You need to make sure to configure Log_Level to only log Fluent Bit errors, or your logs will be filled with unwanted warning messages:
+__But there's one last catch!__ If you read the documentation for log_group_template carefully, you will see a warning is logged each time a fallback is made. To avoid unwanted warning messages in your logs, make sure to configure the Log_Level to only log Fluent Bit errors:
 ```
 [SERVICE]
     Flush                     5
@@ -87,5 +86,6 @@ __But there's one last catch!__ If you read the documentation for _log_group_tem
 
 ## Result
 
-To summarize, log files has now been isolated so that access to information can limited according to _least privilege_. We let Flutent Bit query the Kubernetes kontrol plane to enrich the message so it is diverted to the correct log storage, and lowering the logging costs by only logging errors from the Fluent daemon itself.
-Additionally, we avoid any potential issues with single source of truth. And since log data is not duplicated, environmental and cost footprint is kept at a minimum while lowering the risk of data leakage.
+{{% portfolio image="/img/fluent-bit2.png" alt="FluentBit" %}}
+By querying the Kubernetes control plane to enrich log messages and diverting them to the correct log storage, we can lower logging costs and reduce the risk of data leakage. Additionally, we avoid any potential issues with a single source of truth, and keep our environmental and cost footprint to a minimum by not duplicating log data.
+{{% /portfolio %}}
