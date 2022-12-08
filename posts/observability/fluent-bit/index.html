@@ -23,10 +23,10 @@
 </span></span></code></pre></div><p>To isolate logs and limit access to information based on least privilege, we use the cloudwatch_logs output and the log_group_template key to define a unique log group based on namespace and other labels. For our purposes, this combination of labels is only relevant for customer pods. All other logs will fall back to the log_group_name and be stored in the cluster application log.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>[OUTPUT]
 </span></span><span class=line><span class=cl>    Name                cloudwatch_logs
 </span></span><span class=line><span class=cl>    Match               kube.*
-</span></span><span class=line><span class=cl>    region              $${AWS_REGION}
-</span></span><span class=line><span class=cl>    log_group_name      /aws/containerinsights/$${CLUSTER_NAME}/application
-</span></span><span class=line><span class=cl>    log_group_template  application-logs/$${CLUSTER_NAME}.$kubernetes[&#39;namespace_name&#39;].$kubernetes[&#39;labels&#39;][&#39;app.kubernetes.io/name&#39;]
-</span></span><span class=line><span class=cl>    log_stream_prefix   $${HOST_NAME}-
+</span></span><span class=line><span class=cl>    region              ${AWS_REGION}
+</span></span><span class=line><span class=cl>    log_group_name      /aws/containerinsights/${CLUSTER_NAME}/application
+</span></span><span class=line><span class=cl>    log_group_template  application-logs/${CLUSTER_NAME}.$kubernetes[&#39;namespace_name&#39;].$kubernetes[&#39;labels&#39;][&#39;app.kubernetes.io/name&#39;]
+</span></span><span class=line><span class=cl>    log_stream_prefix   ${HOST_NAME}-
 </span></span><span class=line><span class=cl>    auto_create_group   true
 </span></span><span class=line><span class=cl>    extra_user_agent    container-insights
 </span></span><span class=line><span class=cl>    log_retention_days  90
