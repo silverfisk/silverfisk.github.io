@@ -68,10 +68,10 @@ To isolate logs and limit access to information based on least privilege, we use
 [OUTPUT]
     Name                cloudwatch_logs
     Match               kube.*
-    region              $${AWS_REGION}
-    log_group_name      /aws/containerinsights/$${CLUSTER_NAME}/application
-    log_group_template  application-logs/$${CLUSTER_NAME}.$kubernetes['namespace_name'].$kubernetes['labels']['app.kubernetes.io/name']
-    log_stream_prefix   $${HOST_NAME}-
+    region              ${AWS_REGION}
+    log_group_name      /aws/containerinsights/${CLUSTER_NAME}/application
+    log_group_template  application-logs/${CLUSTER_NAME}.$kubernetes['namespace_name'].$kubernetes['labels']['app.kubernetes.io/name']
+    log_stream_prefix   ${HOST_NAME}-
     auto_create_group   true
     extra_user_agent    container-insights
     log_retention_days  90
