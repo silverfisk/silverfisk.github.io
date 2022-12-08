@@ -2,7 +2,7 @@
 date = 2022-07-31T10:00:00+02:00
 title = "Install ArgoCD"
 slug = "" 
-tags = "k8s, k3s, GitOps"
+tags = ["k8s", "k3s", "GitOps"]
 categories = []
 thumbnail = "/img/argocd-logo.png"
 description = "Set up a ArgoCD GitOps flow"

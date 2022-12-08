@@ -1,10 +1,10 @@
----
-title: "Solar energy prices and storage"
-date: 2022-10-05T09:50:07+02:00
-tags: "solar electricity energy sovereignty"
-categories: "Energy"
-description: "Notes of current solar and battery prices"
----
++++
+title = "Solar energy prices and storage"
+date = 2022-10-05T09:50:07+02:00
+tags = [ "solar", "electricity", "energy", "sovereignty" ]
+categories = [ "Energy" ]
+description = "Notes of current solar and battery prices"
++++
 
 Trust is breaking down between european countries. We may have the first european war winter in a scale not seen since the second world war...
 

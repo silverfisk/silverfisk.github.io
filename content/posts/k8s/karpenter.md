@@ -5,7 +5,7 @@
 date = 2022-10-27T14:30:00+02:00
 title = "Let karpenters just-in-time scheduler manage disk pressure"
 slug = "" 
-tags = "k8s, GitLab, GitOps, karpenter"
+tags = ["k8s", "GitLab", "GitOps", "karpenter"]
 categories = []
 thumbnail = "/img/karpenter-logo.png"
 description = "Kapacity planning in kubernetes"

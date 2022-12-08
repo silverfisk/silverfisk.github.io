@@ -1,10 +1,10 @@
----
-title: "Energy, prosperity and mindset of sustainability in the cloud"
-date: 2022-12-02T13:50:07+02:00
-tags: ["sustainability", "Cloud", "karpenter"]
-categories: ["Energy"]
-description: "Energy, prosperity and mindset opf sustainability in the cloud"
----
++++
+title = "Energy, prosperity and mindset of sustainability in the cloud"
+date = 2022-12-02T13:50:07+02:00
+tags = ["sustainability", "Cloud", "karpenter"]
+categories = ["Energy"]
+description = "Energy, prosperity and mindset opf sustainability in the cloud"
++++
 
 
 Energy is a key factor for human prosperity. It is essential for providing the power needed for transportation, heating and cooling, lighting, and other daily activities. It also plays a crucial role in supporting economic growth and development, as it is needed to run factories, power plants, other infrastructure, and services.
