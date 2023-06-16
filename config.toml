@@ -15,7 +15,7 @@ pygmentsUseClasses = true # new add
 
 [params] # theme parameters
     author = "Tom" # Author's name.
-    info = "Platform engineer with over 15 years experience in Linux systems and DevOps practices." # Author's job title or info.
+    info = "Platform engineer with 20 years relevant experiences in Linux systems and DevOps practices." # Author's job title or info.
     description = "linux-konsult.com" # Site description.
     keywords = "blog,devops,sustainability,esp8266,prometheus,grafana" # Site keywords.
     avatarurl = "images/avatar.jpg" # Contain the path of the optionnal avatar in the static folder.
