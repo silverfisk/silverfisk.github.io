@@ -81,7 +81,7 @@ pygmentsUseClasses = true # new add
 [[menu.main]]
     name = "Resume"
     weight = 10
-    url = "https://whoami.linux-konsult.com"
+    url = "http://whoami.linux-konsult.com"
 
 # [markup.goldmark.renderer]
 # unsafe = true
