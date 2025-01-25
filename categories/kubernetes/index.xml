@@ -1,2 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>kubernetes on linux-konsult.com</title><link>https://linux-konsult.com/categories/kubernetes/</link><description>Recent content in kubernetes on linux-konsult.com</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 02 Dec 2022 09:36:00 +0200</lastBuildDate><atom:link href="https://linux-konsult.com/categories/kubernetes/index.xml" rel="self" type="application/rss+xml"/><item><title>When to extend a helm chart and when to use a subchart</title><link>https://linux-konsult.com/posts/k8s/helm_subcharts/</link><pubDate>Fri, 02 Dec 2022 09:36:00 +0200</pubDate><guid>https://linux-konsult.com/posts/k8s/helm_subcharts/</guid><description>Overview A Helm chart is a package of Kubernetes resources that can be managed and deployed as a unit. It is defined using YAML files and follows a specific directory structure, with a Chart.yaml file that contains metadata about the chart, and one or more templates that define the resources to be deployed. Helm charts can be used to deploy applications, services, or infrastructure on Kubernetes clusters.
-A Helm subchart is a reusable, modular component of a Helm chart that can be defined and managed independently.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kubernetes on linux-konsult.com</title><link>https://linux-konsult.com/categories/kubernetes/</link><description>Recent content in Kubernetes on linux-konsult.com</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 25 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://linux-konsult.com/categories/kubernetes/index.xml" rel="self" type="application/rss+xml"/><item><title>Kubernetes: The API-Driven Platform for Linux Engineers</title><link>https://linux-konsult.com/posts/k8s/linux_to_k8s/</link><pubDate>Sat, 25 Jan 2025 00:00:00 +0000</pubDate><guid>https://linux-konsult.com/posts/k8s/linux_to_k8s/</guid><description>&lt;h1 id="from-linux-to-kubernetes-from-files-to-apis">
+ From Linux to Kubernetes: From Files to APIs
+ &lt;a class="heading-link" href="#from-linux-to-kubernetes-from-files-to-apis">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h1>
+&lt;h2 id="1-introduction-bridging-the-gap">
+ 1. Introduction: Bridging the Gap
+ &lt;a class="heading-link" href="#1-introduction-bridging-the-gap">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;p>For veteran Linux engineers, a core principle that drives much of Linux’s simplicity is &lt;a href="https://en.wikipedia.org/wiki/Everything_is_a_file" class="external-link" target="_blank" rel="noopener">&lt;strong>“everything is a file.”&lt;/strong>&lt;/a> Devices, processes, network interfaces, and more all appear as files or directories, making them easy to inspect and manipulate. In contrast, Kubernetes takes a similarly unifying approach but with an &lt;strong>API-driven&lt;/strong> model, enabling declarative management of infrastructure at scale.&lt;/p></description></item><item><title>When to extend a helm chart and when to use a subchart</title><link>https://linux-konsult.com/posts/k8s/helm_subcharts/</link><pubDate>Fri, 02 Dec 2022 09:36:00 +0200</pubDate><guid>https://linux-konsult.com/posts/k8s/helm_subcharts/</guid><description>&lt;h2 id="overview">
+ Overview
+ &lt;a class="heading-link" href="#overview">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;hr>
+&lt;p>A Helm chart is a package of Kubernetes resources that can be managed and deployed as a unit. It is defined using YAML files and follows a specific directory structure, with a Chart.yaml file that contains metadata about the chart, and one or more templates that define the resources to be deployed. Helm charts can be used to deploy applications, services, or infrastructure on Kubernetes clusters.&lt;/p></description></item></channel></rss>

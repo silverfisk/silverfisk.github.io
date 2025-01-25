@@ -1,2 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Projects on linux-konsult.com</title><link>https://linux-konsult.com/projects/</link><description>Recent content in Projects on linux-konsult.com</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 20 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://linux-konsult.com/projects/index.xml" rel="self" type="application/rss+xml"/><item><title>Monitor your freezer with Prometheus and Grafana</title><link>https://linux-konsult.com/projects/projects/</link><pubDate>Wed, 20 Apr 2022 00:00:00 +0000</pubDate><guid>https://linux-konsult.com/projects/projects/</guid><description>Prometheus monitored freezer Monitor a freezer with Prometheus and Grafana As a preparation of increased food prices, freezed food will be a more and more important asset to monitor. I use a cheap ESP8266 NodeMCU unit with a Dallas DS18B20 temperature sensor to monitor the freezer.
-It uses PlatformIO to become a WiFi enabled device that is scraped by Prometheus and visualized in Grafana. Prometheus alarms can then monitor and page you if the freezer loose it&amp;rsquo;s temperature.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Projects on linux-konsult.com</title><link>https://linux-konsult.com/projects/</link><description>Recent content in Projects on linux-konsult.com</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 20 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://linux-konsult.com/projects/index.xml" rel="self" type="application/rss+xml"/><item><title>Monitor your freezer with Prometheus and Grafana</title><link>https://linux-konsult.com/projects/projects/</link><pubDate>Wed, 20 Apr 2022 00:00:00 +0000</pubDate><guid>https://linux-konsult.com/projects/projects/</guid><description>&lt;h2 id="prometheus-monitored-freezer">
+ Prometheus monitored freezer
+ &lt;a class="heading-link" href="#prometheus-monitored-freezer">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;p>&lt;img src="https://linux-konsult.com/img/prom_freezer.png" alt="Prometheus Freezer">&lt;/p>
+&lt;h2 id="monitor-a-freezer-with-prometheus-and-grafana">
+ Monitor a freezer with Prometheus and Grafana
+ &lt;a class="heading-link" href="#monitor-a-freezer-with-prometheus-and-grafana">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;p>As a preparation of increased food prices, freezed food will be a more and more important asset to monitor.
+I use a cheap ESP8266 NodeMCU unit with a Dallas DS18B20 temperature sensor to monitor the freezer.&lt;/p>
+&lt;p>&lt;a href="https://github.com/silverfisk/esp8266_prometheus_exporter_for_ds18b20_temperature_sensors" class="external-link" target="_blank" rel="noopener">It uses PlatformIO to become a WiFi enabled device&lt;/a> that is scraped by Prometheus and visualized in Grafana. Prometheus alarms can then monitor and page you if the freezer loose it&amp;rsquo;s temperature.&lt;/p></description></item></channel></rss>

@@ -1,13 +1,92 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on linux-konsult.com</title><link>https://linux-konsult.com/posts/</link><description>Recent content in Posts on linux-konsult.com</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 07 Dec 2022 22:00:07 +0200</lastBuildDate><atom:link href="https://linux-konsult.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Fluent Bit: Isolating pod logs in a multitenant EKS cluster</title><link>https://linux-konsult.com/posts/observability/fluent-bit/</link><pubDate>Wed, 07 Dec 2022 22:00:07 +0200</pubDate><guid>https://linux-konsult.com/posts/observability/fluent-bit/</guid><description>Overview In this post, we discuss how to isolate log access in a multitenant AWS EKS cluster between tenants. This solution is intended for those who need to give customer team members access to their own microservice log output without replicating the log storage out to other logging solutions or out of the AWS account to minimize the risk of data leakage.
-Situation We have a multi-tenant EKS Kubernetes cluster that is used as an internal development platform.</description></item><item><title>Energy, prosperity and mindset of sustainability in the cloud</title><link>https://linux-konsult.com/posts/energy/cloud_energy_sustainability/</link><pubDate>Fri, 02 Dec 2022 13:50:07 +0200</pubDate><guid>https://linux-konsult.com/posts/energy/cloud_energy_sustainability/</guid><description>Energy is a key factor for human prosperity. It is essential for providing the power needed for transportation, heating and cooling, lighting, and other daily activities. It also plays a crucial role in supporting economic growth and development, as it is needed to run factories, power plants, other infrastructure, and services.
-There is a wealth of data that supports the importance of energy for human prosperity. For example, the World Bank reports that access to modern energy services is a key factor in reducing poverty and promoting economic growth.</description></item><item><title>When to extend a helm chart and when to use a subchart</title><link>https://linux-konsult.com/posts/k8s/helm_subcharts/</link><pubDate>Fri, 02 Dec 2022 09:36:00 +0200</pubDate><guid>https://linux-konsult.com/posts/k8s/helm_subcharts/</guid><description>Overview A Helm chart is a package of Kubernetes resources that can be managed and deployed as a unit. It is defined using YAML files and follows a specific directory structure, with a Chart.yaml file that contains metadata about the chart, and one or more templates that define the resources to be deployed. Helm charts can be used to deploy applications, services, or infrastructure on Kubernetes clusters.
-A Helm subchart is a reusable, modular component of a Helm chart that can be defined and managed independently.</description></item><item><title>Let karpenters just-in-time scheduler manage disk pressure</title><link>https://linux-konsult.com/posts/k8s/karpenter/</link><pubDate>Thu, 27 Oct 2022 14:30:00 +0200</pubDate><guid>https://linux-konsult.com/posts/k8s/karpenter/</guid><description>Overview Capacity planning in Kubernetes can be challenging. Karpenter is useful for automatically rightscaling and rightsizing Kubernetes nodes in an EKS cluster, but it usually only considers CPU and memory usage. We experienced difficulties troubleshooting this issue because the node storage was not full at the time we checked it. The disk usage would spike to almost capacity (98-99%) during the execution of GitLab CI jobs, then decrease after the job was completed.</description></item><item><title>Install ArgoCD</title><link>https://linux-konsult.com/posts/k8s/argocd/</link><pubDate>Sun, 31 Jul 2022 10:00:00 +0200</pubDate><guid>https://linux-konsult.com/posts/k8s/argocd/</guid><description>Quick install mkdir -p ~/git/github.com/argoproj cd ~/git/github.com/argoproj kubectl create namespace argocd git clone https://github.com/argoproj/argo-cd.git kubectl apply --namespace argocd -f ~/git/github.com/argoproj/argo-cd/manifests/install.yaml Access ArgoCD To access ArgoCD you port forward as below. The installation process automatically creates an admin user. You&amp;rsquo;ll see the generated password below.
-echo &amp;#34;argocd password: $(kubectl -n argocd get secret argocd-initial-admin-secret -ojson | jq -r .data.password| base64 -d)&amp;#34; kubectl port-forward svc/argocd-server -n argocd 8080:443</description></item><item><title>Kubernetes with k3s on Raspberry Pi 4</title><link>https://linux-konsult.com/posts/k8s/rpi4-k3s/</link><pubDate>Sat, 30 Jul 2022 13:00:00 +0200</pubDate><guid>https://linux-konsult.com/posts/k8s/rpi4-k3s/</guid><description>Disk intensive applications such as kubernetes can run on Raspberry Pi 4, but you need to migrate from the SD card to an SSD drive. Trust me, you don&amp;rsquo;t want to run this from your SD card. I tried&amp;hellip;
-Warning: I have noted down the steps taken, there may be some additional steps you need to take to get everything working. If so let me now through GitHub
-Preparations K3S networking does not work with nftables, so switch to legacy iptables:</description></item><item><title>Migrate Raspberry Pi SD card to SSD</title><link>https://linux-konsult.com/posts/rpi/rpi4-ssd/</link><pubDate>Sat, 30 Jul 2022 09:00:11 +0200</pubDate><guid>https://linux-konsult.com/posts/rpi/rpi4-ssd/</guid><description>Disk intensive applications such as kubernetes can run on Raspberry Pi 4, but you need to migrate from the SD card to an SSD drive.
-Raspberry Pi can boot from USB, so you don&amp;rsquo;t have to wear out your SD card anymore.
-This is what you need to configure your raspberry pi:
-A USB3 SATA or M.2 case SSD disk Os already installed on the old SD card Set up Boot up your rpi4 on the SD card.</description></item><item><title>Prometheus monitoring of BME280 sensor readings</title><link>https://linux-konsult.com/posts/observability/prom-bme280/</link><pubDate>Sat, 14 May 2022 19:07:07 +0200</pubDate><guid>https://linux-konsult.com/posts/observability/prom-bme280/</guid><description>I wanted to be able to monitor the environment in my RV, so this weekend I created the esp32_prometheus_exporter_BME280.
-My plan later is to monitor it and send alerts with LoraWan so I know my cat is OK I want to leave it in the vehicle. With LoraWan I should be able to get notified without cellular coverage.
-For now it&amp;rsquo;s just a regular wifi based sensor since I don&amp;rsquo;t have the lora hardware yet.</description></item><item><title>Airgap your Raspberry Pi on a shoestring budget</title><link>https://linux-konsult.com/posts/airgapping-rpi/</link><pubDate>Thu, 05 May 2022 22:16:17 +0200</pubDate><guid>https://linux-konsult.com/posts/airgapping-rpi/</guid><description>Airgapping is a method used when you want to be reasonable sure your device wasn&amp;rsquo;t tampered with. Regardless if you want to install a Seedsigner or something else. The best is to never have had it connected to your network in the first place.
-Here&amp;rsquo;s how I used a $1 USB serial programmer for an ESP-01 to configure an off-line Raspberry Pi. I&amp;rsquo;ll also show how to transfer files to your machine with this oldschool method.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on linux-konsult.com</title><link>https://linux-konsult.com/posts/</link><description>Recent content in Posts on linux-konsult.com</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 25 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://linux-konsult.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Kubernetes: The API-Driven Platform for Linux Engineers</title><link>https://linux-konsult.com/posts/k8s/linux_to_k8s/</link><pubDate>Sat, 25 Jan 2025 00:00:00 +0000</pubDate><guid>https://linux-konsult.com/posts/k8s/linux_to_k8s/</guid><description>&lt;h1 id="from-linux-to-kubernetes-from-files-to-apis">
+ From Linux to Kubernetes: From Files to APIs
+ &lt;a class="heading-link" href="#from-linux-to-kubernetes-from-files-to-apis">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h1>
+&lt;h2 id="1-introduction-bridging-the-gap">
+ 1. Introduction: Bridging the Gap
+ &lt;a class="heading-link" href="#1-introduction-bridging-the-gap">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;p>For veteran Linux engineers, a core principle that drives much of Linux’s simplicity is &lt;a href="https://en.wikipedia.org/wiki/Everything_is_a_file" class="external-link" target="_blank" rel="noopener">&lt;strong>“everything is a file.”&lt;/strong>&lt;/a> Devices, processes, network interfaces, and more all appear as files or directories, making them easy to inspect and manipulate. In contrast, Kubernetes takes a similarly unifying approach but with an &lt;strong>API-driven&lt;/strong> model, enabling declarative management of infrastructure at scale.&lt;/p></description></item><item><title>Fluent Bit: Isolating pod logs in a multitenant EKS cluster</title><link>https://linux-konsult.com/posts/observability/fluent-bit/</link><pubDate>Wed, 07 Dec 2022 22:00:07 +0200</pubDate><guid>https://linux-konsult.com/posts/observability/fluent-bit/</guid><description>&lt;h1 id="overview">
+ Overview
+ &lt;a class="heading-link" href="#overview">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h1>
+&lt;hr>
+&lt;p>In this post, we discuss how to isolate log access in a multitenant AWS EKS cluster between tenants. This solution is intended for those who need to give customer team members access to their own microservice log output without replicating the log storage out to other logging solutions or out of the AWS account to minimize the risk of data leakage.&lt;/p></description></item><item><title>Energy, prosperity and mindset of sustainability in the cloud</title><link>https://linux-konsult.com/posts/energy/cloud_energy_sustainability/</link><pubDate>Fri, 02 Dec 2022 13:50:07 +0200</pubDate><guid>https://linux-konsult.com/posts/energy/cloud_energy_sustainability/</guid><description>&lt;p>Energy is a key factor for human prosperity. It is essential for providing the power needed for transportation, heating and cooling, lighting, and other daily activities. It also plays a crucial role in supporting economic growth and development, as it is needed to run factories, power plants, other infrastructure, and services.&lt;/p>
+&lt;p>&lt;img src="https://linux-konsult.com/img/europe-grid.png" alt="Europe">&lt;/p>
+&lt;p>There is a wealth of data that supports the importance of energy for human prosperity. For example, the World Bank reports that access to modern energy services is a key factor in reducing poverty and promoting economic growth. The International Energy Agency (IEA) also finds that improving access to modern energy can have a major impact on health, education, and other indicators of human development.&lt;/p></description></item><item><title>When to extend a helm chart and when to use a subchart</title><link>https://linux-konsult.com/posts/k8s/helm_subcharts/</link><pubDate>Fri, 02 Dec 2022 09:36:00 +0200</pubDate><guid>https://linux-konsult.com/posts/k8s/helm_subcharts/</guid><description>&lt;h2 id="overview">
+ Overview
+ &lt;a class="heading-link" href="#overview">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;hr>
+&lt;p>A Helm chart is a package of Kubernetes resources that can be managed and deployed as a unit. It is defined using YAML files and follows a specific directory structure, with a Chart.yaml file that contains metadata about the chart, and one or more templates that define the resources to be deployed. Helm charts can be used to deploy applications, services, or infrastructure on Kubernetes clusters.&lt;/p></description></item><item><title>Let karpenters just-in-time scheduler manage disk pressure</title><link>https://linux-konsult.com/posts/k8s/karpenter/</link><pubDate>Thu, 27 Oct 2022 14:30:00 +0200</pubDate><guid>https://linux-konsult.com/posts/k8s/karpenter/</guid><description>&lt;h2 id="overview">
+ Overview
+ &lt;a class="heading-link" href="#overview">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;hr>
+&lt;p>Capacity planning in Kubernetes can be challenging.
+Karpenter is useful for automatically rightscaling and rightsizing Kubernetes nodes in an EKS cluster, but it usually only considers CPU and memory usage. We experienced difficulties troubleshooting this issue because the node storage was not full at the time we checked it. The disk usage would spike to almost capacity (98-99%) during the execution of GitLab CI jobs, then decrease after the job was completed. This made it difficult to identify the cause of the issue.&lt;/p></description></item><item><title>Install ArgoCD</title><link>https://linux-konsult.com/posts/k8s/argocd/</link><pubDate>Sun, 31 Jul 2022 10:00:00 +0200</pubDate><guid>https://linux-konsult.com/posts/k8s/argocd/</guid><description>&lt;h2 id="quick-install">
+ Quick install
+ &lt;a class="heading-link" href="#quick-install">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>mkdir -p ~/git/github.com/argoproj
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd ~/git/github.com/argoproj
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubectl create namespace argocd
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git clone https://github.com/argoproj/argo-cd.git
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubectl apply --namespace argocd -f ~/git/github.com/argoproj/argo-cd/manifests/install.yaml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="access-argocd">
+ Access ArgoCD
+ &lt;a class="heading-link" href="#access-argocd">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;p>To access ArgoCD you port forward as below. The installation process automatically creates an &lt;code>admin&lt;/code> user. You&amp;rsquo;ll see the generated password below.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>echo &lt;span style="color:#a5d6ff">&amp;#34;argocd password: &lt;/span>&lt;span style="color:#ff7b72">$(&lt;/span>kubectl -n argocd get secret argocd-initial-admin-secret -ojson | jq -r .data.password| base64 -d&lt;span style="color:#ff7b72">)&lt;/span>&lt;span style="color:#a5d6ff">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubectl port-forward svc/argocd-server -n argocd 8080:443
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Kubernetes with k3s on Raspberry Pi 4</title><link>https://linux-konsult.com/posts/k8s/rpi4-k3s/</link><pubDate>Sat, 30 Jul 2022 13:00:00 +0200</pubDate><guid>https://linux-konsult.com/posts/k8s/rpi4-k3s/</guid><description>&lt;p>Disk intensive applications such as kubernetes can run on Raspberry Pi 4, but you need to &lt;a href="https://linux-konsult.com/posts/rpi/rpi4-ssd/" class="external-link" target="_blank" rel="noopener">migrate from the SD card to an SSD drive&lt;/a>.
+Trust me, you don&amp;rsquo;t want to run this from your SD card. I tried&amp;hellip;&lt;/p>
+&lt;p>Warning: I have noted down the steps taken, there may be some additional steps you need to take to get everything working. If so let me now through &lt;a href="https://github.com/silverfisk/silverfisk.github.io/blob/main/content/posts/k8s/rpi4-k3s.md" class="external-link" target="_blank" rel="noopener">GitHub&lt;/a>&lt;/p>
+&lt;h2 id="preparations">
+ Preparations
+ &lt;a class="heading-link" href="#preparations">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;p>K3S networking does not work with nftables, so switch to legacy iptables:&lt;/p></description></item><item><title>Migrate Raspberry Pi SD card to SSD</title><link>https://linux-konsult.com/posts/rpi/rpi4-ssd/</link><pubDate>Sat, 30 Jul 2022 09:00:11 +0200</pubDate><guid>https://linux-konsult.com/posts/rpi/rpi4-ssd/</guid><description>&lt;p>Disk intensive applications such as kubernetes can run on Raspberry Pi 4, but you need to migrate from the SD card to an SSD drive.&lt;/p>
+&lt;p>Raspberry Pi can boot from USB, so you don&amp;rsquo;t have to wear out your SD card anymore.&lt;/p>
+&lt;p>&lt;img src="https://linux-konsult.com/img/rpi4-ssd.jpeg" alt="Hardware">&lt;/p>
+&lt;p>This is what you need to configure your raspberry pi:&lt;/p>
+&lt;ul>
+&lt;li>A USB3 SATA or M.2 case&lt;/li>
+&lt;li>SSD disk&lt;/li>
+&lt;li>Os already installed on the old SD card&lt;/li>
+&lt;/ul>
+&lt;h2 id="set-up">
+ Set up
+ &lt;a class="heading-link" href="#set-up">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;p>Boot up your rpi4 on the SD card. Log in and connect the USB drive and check out your device names:&lt;/p></description></item><item><title>Prometheus monitoring of BME280 sensor readings</title><link>https://linux-konsult.com/posts/observability/prom-bme280/</link><pubDate>Sat, 14 May 2022 19:07:07 +0200</pubDate><guid>https://linux-konsult.com/posts/observability/prom-bme280/</guid><description>&lt;p>I wanted to be able to monitor the environment in my RV, so this weekend I created the &lt;a href="https://github.com/silverfisk/esp32_prometheus_exporter_BME280" class="external-link" target="_blank" rel="noopener">esp32_prometheus_exporter_BME280&lt;/a>.&lt;/p>
+&lt;p>My plan later is to monitor it and send alerts with LoraWan so I know my cat is OK I want to leave it in the vehicle. With LoraWan I should be able to get notified without cellular coverage.&lt;/p>
+&lt;p>For now it&amp;rsquo;s just a regular wifi based sensor since I don&amp;rsquo;t have the lora hardware yet.&lt;/p></description></item></channel></rss>

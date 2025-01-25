@@ -1,4 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>raspberry pi, storage on linux-konsult.com</title><link>https://linux-konsult.com/tags/raspberry-pi-storage/</link><description>Recent content in raspberry pi, storage on linux-konsult.com</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 30 Jul 2022 09:00:11 +0200</lastBuildDate><atom:link href="https://linux-konsult.com/tags/raspberry-pi-storage/index.xml" rel="self" type="application/rss+xml"/><item><title>Migrate Raspberry Pi SD card to SSD</title><link>https://linux-konsult.com/posts/rpi/rpi4-ssd/</link><pubDate>Sat, 30 Jul 2022 09:00:11 +0200</pubDate><guid>https://linux-konsult.com/posts/rpi/rpi4-ssd/</guid><description>Disk intensive applications such as kubernetes can run on Raspberry Pi 4, but you need to migrate from the SD card to an SSD drive.
-Raspberry Pi can boot from USB, so you don&amp;rsquo;t have to wear out your SD card anymore.
-This is what you need to configure your raspberry pi:
-A USB3 SATA or M.2 case SSD disk Os already installed on the old SD card Set up Boot up your rpi4 on the SD card.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Raspberry Pi, Storage on linux-konsult.com</title><link>https://linux-konsult.com/tags/raspberry-pi-storage/</link><description>Recent content in Raspberry Pi, Storage on linux-konsult.com</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 30 Jul 2022 09:00:11 +0200</lastBuildDate><atom:link href="https://linux-konsult.com/tags/raspberry-pi-storage/index.xml" rel="self" type="application/rss+xml"/><item><title>Migrate Raspberry Pi SD card to SSD</title><link>https://linux-konsult.com/posts/rpi/rpi4-ssd/</link><pubDate>Sat, 30 Jul 2022 09:00:11 +0200</pubDate><guid>https://linux-konsult.com/posts/rpi/rpi4-ssd/</guid><description>&lt;p>Disk intensive applications such as kubernetes can run on Raspberry Pi 4, but you need to migrate from the SD card to an SSD drive.&lt;/p>
+&lt;p>Raspberry Pi can boot from USB, so you don&amp;rsquo;t have to wear out your SD card anymore.&lt;/p>
+&lt;p>&lt;img src="https://linux-konsult.com/img/rpi4-ssd.jpeg" alt="Hardware">&lt;/p>
+&lt;p>This is what you need to configure your raspberry pi:&lt;/p>
+&lt;ul>
+&lt;li>A USB3 SATA or M.2 case&lt;/li>
+&lt;li>SSD disk&lt;/li>
+&lt;li>Os already installed on the old SD card&lt;/li>
+&lt;/ul>
+&lt;h2 id="set-up">
+ Set up
+ &lt;a class="heading-link" href="#set-up">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;p>Boot up your rpi4 on the SD card. Log in and connect the USB drive and check out your device names:&lt;/p></description></item></channel></rss>
