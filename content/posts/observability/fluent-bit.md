@@ -15,9 +15,8 @@ In this post, we discuss how to isolate log access in a multitenant AWS EKS clus
 ## Situation
 
 We have a multi-tenant EKS Kubernetes cluster that is used as an internal development platform. Development teams use the platform to deploy their microservices. While the developers do not have access to the AWS account hosting the cluster, they do need access to their own log files. These log files are stored in AWS CloudWatch Logs in the EKS AWS account, to which the developers do not have access. However, the customer team does have their own AWS account.
-{{% portfolio image="/img/fluent-bit.png" alt="FluentBit" %}}
+![FluentBit](/img/fluent-bit.png)
 By default, the cluster uses a Fluent Bit daemonset to forward all pod logs to the same Log Group in AWS CloudWatch Logs. This configuration allows the customer team to access their logs, even though the developers cannot log in to the EKS AWS account.
-{{% /portfolio %}}
 
 ## Task
 
@@ -86,6 +85,5 @@ __But there's one last catch!__ If you read the documentation for log_group_temp
 
 ## Result
 
-{{% portfolio image="/img/fluent-bit2.png" alt="FluentBit" %}}
+![FluentBit](/img/fluent-bit2.png)
 By querying the Kubernetes control plane to enrich log messages and diverting them to the correct log storage, we can lower logging costs and reduce the risk of data leakage. Additionally, we avoid any potential issues with a single source of truth, and keep our environmental and cost footprint to a minimum by not duplicating log data.
-{{% /portfolio %}}

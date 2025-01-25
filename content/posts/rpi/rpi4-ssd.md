@@ -14,15 +14,13 @@ Raspberry Pi can boot from USB, so you don't have to wear out your SD card anymo
 
 
 
-{{% portfolio image="/img/rpi4-ssd.jpeg" alt="Hardware" %}}
+![Hardware](/img/rpi4-ssd.jpeg)
 
 This is what you need to configure your raspberry pi:
 
  * A USB3 SATA or M.2 case
  * SSD disk
  * Os already installed on the old SD card
-
-{{% /portfolio %}}
 
 
 
@@ -80,9 +78,9 @@ pi@raspberrypi:~ $ sudo raspi-config
 
 Advanced Options > Boot Order > USB Boot
 
-{{% portfolio image="/img/rpi4-stp1.png" alt="Step1" %}}{{% /portfolio %}}
-{{% portfolio image="/img/rpi4-stp2.png" alt="Step2" %}}{{% /portfolio %}}
-{{% portfolio image="/img/rpi4-stp3.png" alt="Step3" %}}{{% /portfolio %}}
-{{% portfolio image="/img/rpi4-stp4.png" alt="Step4" %}}{{% /portfolio %}}
+![Step1](/img/rpi4-stp1.png)
+![Step2](/img/rpi4-stp2.png)
+![Step3](/img/rpi4-stp3.png)
+![Step4](/img/rpi4-stp4.png)
 
 Shut down your raspberry and take out the SD card before powering it on again.

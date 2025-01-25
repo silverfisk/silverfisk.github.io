@@ -22,8 +22,8 @@ Karpenter is useful for automatically rightscaling and rightsizing Kubernetes no
 To address this issue, we used the```Provisioner``` kind to configure the just-in-time node scheduler to place bids for new (or larger) spot instance nodes. In addition to providing a better ROI on the cluster, this approach also helps to improve Cloud Sustainability targets, such as [SUS05-BP01](https://docs.aws.amazon.com/wellarchitected/latest/sustainability-pillar/sus_sus_hardware_a2.html), by using the minimum amount of hardware needed to meet your needs if you follow the new [AWS Well Architected Sustaninability Pillar](https://docs.aws.amazon.com/wellarchitected/latest/sustainability-pillar/sustainability-pillar.html).
 
 This lets karpenter configure nodes to automatically perform garbage collection, and taint itself to avoid further pod scheduling. As a last resort it will kill greedy CI jobs to keep the cluster as a whole more consistent, performant and stable.
-{{%portfolio image=/img/k8s_rightsizing.png %}}
 
+![K8s Rightsizing](/img/k8s_rightsizing.png)
 ### Karpenter kubelet Configuration
 ----
 
@@ -34,7 +34,6 @@ While this approach may cause some GitLab CI jobs to fail when node disks are fu
 
 
 Check if the cluster already has a kubeletConfiguration:
-{{% /portfolio %}}
 
 ```shell
 [localhost]$ kubectl get provisioners.karpenter.sh default  -oyaml | yq .spec.kubeletConfiguration

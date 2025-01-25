@@ -1,10 +1,17 @@
 baseurl = "https://linux-konsult.com"
 title = "linux-konsult.com" # Site title.
-theme = "coder-portfolio" # Set the theme.
+theme = "hugo-coder"
 languagecode = "en" # The site’s language code used to generate RSS.
 defaultcontentlanguage = "en" # The default content language.
 
-paginate = 20 # Default number of pages per page in pagination.
+
+[markup.highlight]
+style = "github-dark"
+
+[pagination]
+  disableAliases = false
+  pagerSize = 20
+  path = 'page'
 
 pygmentsstyle = "b2" # Color-theme or style for syntax highlighting.
 pygmentscodefences = true # Enable code fence background highlighting.
@@ -26,6 +33,7 @@ pygmentsUseClasses = true # new add
 
     # Whether you want to hide copyright and credits in the footer.
     hideCredits = true
+    hidePoweredBy = true
     hideCopyright = true
 
     # Custom CSS
@@ -53,7 +61,7 @@ pygmentsUseClasses = true # new add
 
 [[params.social]]
     name = "Github"
-    icon = "fab fa-github"
+    icon = "fa-brands fa-github fa-2x"
     weight = 1
     url = "https://github.com/silverfisk/"
 
