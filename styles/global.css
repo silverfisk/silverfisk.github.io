@@ -191,6 +191,48 @@ img {
   text-decoration: none;
 }
 
+/* ===== Hero Section (Home Page) ===== */
+.hero-section {
+  text-align: center;
+  padding: 2.5rem 0 2rem;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 1.5rem;
+}
+
+.hero-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #323232;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto 1.25rem;
+  line-height: 1.5;
+}
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.hero-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-family: "IBM Plex Mono", monospace;
+  color: #05b;
+  background-color: #e8f0fe;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
 /* ===== Posts / Blog Listing ===== */
 .post-list {
   list-style: none;
