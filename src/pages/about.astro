@@ -1,0 +1,166 @@
+---
+import Layout from '@layouts/Layout.astro';
+---
+
+<Layout title="About me" currentPage="about">
+  <div class="about-header">
+    <img src="/images/avatar.jpg" alt="Tom" class="about-avatar" />
+    <h1 class="about-name">Tom</h1>
+    <p class="about-info">Platform engineer with 20 years relevant experiences in Linux systems and DevOps practices.</p>
+    <div class="social-links">
+      <a href="https://github.com/silverfisk/" aria-label="GitHub" target="_blank" rel="noopener">
+        <i class="fa-brands fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/tomeklof/" aria-label="LinkedIn" target="_blank" rel="noopener">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+    </div>
+  </div>
+
+  <div>
+    <p>I work as a Tech Lead in a newly formed SRE team for a cloud based backend for autonomous semitrucks.
+    With a previous focus strongly in favor of AWS cloud services, We now focus on transitioning to a Cloud Native observability stack.</p>
+
+    <p>In order to always learn new things I try to stay junior and humble.</p>
+
+    <hr />
+
+    <h2>Work</h2>
+
+    <h3>Site Reliability Engineer - Tech lead</h3>
+    <p><em>transition observability to a cloud native stack</em></p>
+    <p>Scania R&D | <em>Remote</em></p>
+    <ul>
+      <li>Evangelise and help teams implement SLOs &amp; SLIs</li>
+      <li>Using Terrafom for infrastructure automation</li>
+      <li>70% cost optimiziation of Kubernetes klusters with spot instance pricing</li>
+      <li>Showcase Grafana with augmented SVG dashboard for metrics contextualization</li>
+      <li>Transition GitLab CI runners to kubernetes</li>
+    </ul>
+
+    <hr />
+
+    <h3>Platform Engineer - Security lead / Development engineer</h3>
+    <p><em>Building cloud backend services for Scanias Autonomous vehicles</em></p>
+    <p>Dec '20 - Oct '21 | Scania R&D | <em>Remote</em></p>
+    <ul>
+      <li>Designed and implemented GitLab CI Merge Request testing pipelines to minimize human efforts and automatically detect secrets committed in code</li>
+      <li>Defined metrics standards to unify each teams SLIs</li>
+      <li>Fargate ECS</li>
+      <li>Increased overall system observability with AWS Cloudwatch metrics creation and cross account access</li>
+      <li>Used OpenTelemetry and Prometheus to make kafka metrics available in CloudWatch</li>
+      <li>Modified a Serverless framework (Python) api to emit release related metrics</li>
+      <li>Improved reusable GitLab CI pipeline boilerplates</li>
+      <li>Renovate Bot, a bot to detect and create automatic library/container supply chain updates</li>
+      <li>Maintained a set of CloudFormation code to streamline infrastructure such as WebApplication Firewalls</li>
+    </ul>
+
+    <hr />
+
+    <h3>Development Engineer</h3>
+    <p><em>Build cloud backend services for Scanias Autonomous vehicles</em></p>
+    <p>Jan '19 - Dec '20 | Scania R&D | <em>Södertälje</em></p>
+    <ul>
+      <li>Cloud account owner</li>
+      <li>Security Lead</li>
+      <li>GitLab CI</li>
+      <li>Data Dog monitoring</li>
+      <li>Kinesis</li>
+      <li>Wrote Python services with the Serverless Framework</li>
+      <li>Wrote reusable CI pipeline boilerplates</li>
+      <li>Managed Nexus package repository infrastructure</li>
+    </ul>
+
+    <hr />
+
+    <h3>Cloud Architect</h3>
+    <p>Jan '18 - Jan '19 | Scania IT | <em>Södertälje</em></p>
+    <ul>
+      <li>Terraform</li>
+      <li>Ansible</li>
+      <li>GitLab configuration &amp; pipeline setup, mainly with Terraform and Ansible</li>
+      <li>Control blast radius with cross-account role assume strategies</li>
+      <li>Lambda automation (python)</li>
+      <li>Coach an SAP DevOps technician to build capability for a "hands off deployment" of a SAP system with a single GIT commit. This is to be used within their business unit as a good example of the benefits of automation.</li>
+      <li>"Sell" cloud benefits to developers such as using and rotating secrets with Java code examples so that secrets don't have to be persisted to disk</li>
+    </ul>
+
+    <hr />
+
+    <h3>Technical Specialist Linux Server</h3>
+    <p>Jan '15 - Dec '17 | Scania IT | <em>Södertälje</em></p>
+    <ul>
+      <li>Planning, improving, lifecycle and managing 100+ RHEV hypervisors and 1400+ VMs</li>
+      <li>Python scripting to automate storage migrations et cetera utilizing (mostly) RHEV APIs</li>
+      <li>Handled management &amp; provisioning automation for virtual machines</li>
+      <li>Performed most automation &amp; configuration with Ansible</li>
+      <li>Troubleshooted performance of Java/Tomcat/JBoss applications</li>
+    </ul>
+
+    <hr />
+
+    <h3>Solutions Architect</h3>
+    <p>Jan '14 - Jan '15 | RG19 | <em>Stockholm</em></p>
+    <ul>
+      <li>Service design, upgrade &amp; management of UNIX/Linux related software</li>
+      <li>Investigating application interconnections with tcpdump + Wireshark</li>
+      <li>IBM AIX process memory management</li>
+      <li>Aptean Order- and Warehouse systems</li>
+      <li>Java/Tomcat/JBoss/WebSphere performance troubleshooting</li>
+      <li>Measured and probed Web site performance with selenium</li>
+      <li>Application wide system probing &amp; documentation</li>
+      <li>Application monitoring</li>
+    </ul>
+
+    <hr />
+
+    <h3>Systems Administrator</h3>
+    <p>Jan '11 - Jan '14 | Mogul Services | <em>Stockholm</em></p>
+    <ul>
+      <li>Migrated, OS/Software monitoring &amp; hardening the Swedish Government public Web site (sweden.gov.se &amp; regeringen.se)</li>
+      <li>Mitigated a DDOS attack from the Anonymous group on the government of Swedens website, regeringen.se</li>
+      <li>Set up scripting, system administration and automation for Sveriges Television (Sweden's national TV station) websites www.svt.se and svtplay.se</li>
+      <li>Setup of a new Escenic / Tomcat environment for Sveriges Television</li>
+      <li>Automate operational tasks in RunDeck</li>
+      <li>Stingray Load Balancers; traffic scripting etc.</li>
+      <li>Various Nagios / OP5 plugin scripting</li>
+      <li>VMWare ESXi + Netapp cluster management</li>
+      <li>Percona MySQL</li>
+      <li>Apache httpd management</li>
+    </ul>
+
+    <hr />
+
+    <h3>Java Application Technician</h3>
+    <p>Jan '08 - Jan '11 | Memnon Network Applications | <em>Stockholm</em></p>
+    <ul>
+      <li>Application monitoring &amp; troubleshooting in the Operation Environment Apport.net</li>
+      <li>Automate deployments in a Jenkins/Hudson CD pipeline</li>
+      <li>Compose Operations- &amp; Incident Reports</li>
+      <li>Analyze Java Application Errors &amp; produce bug reports</li>
+      <li>Tweak/optimize/monitor java 1.5 Garbage Collection</li>
+      <li>Create Test &amp; deployment environments for the JBoss application Apport.net</li>
+      <li>Deploy internal infrastructure such as SVN, AD-connected freeradius et cetera</li>
+      <li>Compose various Bash &amp; Perl scripts (deploy &amp; monitoring scripts mainly)</li>
+      <li>Setup of redundant firewalls &amp; redundant apache servers/load balancers</li>
+      <li>Migrate Apport.net from Solaris to Linux</li>
+      <li>Migrate the Apport.net server system from Sundsvall to Stockholm (software migration)</li>
+      <li>Compose System documentation templates</li>
+      <li>Set up of MySQL slave servers</li>
+      <li>Monitor &amp; minor troubleshooting of MS SQL Enterprise &amp; MySQL</li>
+      <li>Produce Standard work Procedures</li>
+    </ul>
+
+    <hr />
+
+    <h3>Personal interests</h3>
+    <p>The internet provided a fantastic decentralizing oppurtunity in the 1990s. Similarily, Bitcoin and Monero will provide for cash and banking in the 2020s what the Internet did for information at the beginning of the millennium!</p>
+    <ul>
+      <li><a href="https://github.com/">Bitcoin</a></li>
+      <li><a href="https://github.com/">Decentralization</a></li>
+      <li><a href="https://github.com/">Gardening</a></li>
+      <li><a href="https://idrottonline.se/Trosa-VagnharadSG-Skyttesport/">Sports shooting</a></li>
+      <li><a href="https://trosaskytte.se/">Hunting</a></li>
+    </ul>
+  </div>
+</Layout>

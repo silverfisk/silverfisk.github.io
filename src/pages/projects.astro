@@ -1,0 +1,34 @@
+---
+import Layout from '@layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const projects = Array.from(await getCollection('projects'));
+
+const sortedProjects = projects.sort((a, b) => {
+  if (!a.data.date && !b.data.date) return 0;
+  if (!a.data.date) return 1;
+  if (!b.data.date) return -1;
+  return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
+});
+---
+
+<Layout title="Projects" currentPage="posts">
+  <h1>Projects</h1>
+
+  <ul class="post-list">
+    {sortedProjects.map(async project => {
+      const { Content } = await project.render();
+      return (
+        <li>
+          <h2 class="post-title">{project.data.title}</h2>
+          {project.data.date && (
+            <span class="post-date">{new Date(project.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+          )}
+          <div>
+            <Content />
+          </div>
+        </li>
+      );
+    })}
+  </ul>
+</Layout>

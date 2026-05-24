@@ -1,0 +1,47 @@
+---
+import Layout from '@layouts/Layout.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = Array.from(await getCollection('posts')).filter(post => !post.data.draft);
+  
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const formatDate = (date: Date) => {
+  return new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+};
+---
+
+<Layout title={post.data.title} currentPage="posts" description={post.data.description}>
+  <article>
+    <header style="margin-bottom: 2rem;">
+      <span class="post-date">{formatDate(post.data.date)}</span>
+      <h1>{post.data.title}</h1>
+      {post.data.tags.length > 0 && (
+        <div class="post-tags" style="margin-top: 0.5em;">
+          {post.data.tags.map(tag => <span class="post-tag">{tag}</span>)}
+        </div>
+      )}
+      {post.data.categories.length > 0 && (
+        <div class="post-tags" style="margin-top: 0.3em;">
+          {post.data.categories.map(cat => <span class="post-tag">{cat}</span>)}
+        </div>
+      )}
+    </header>
+
+    {post.data.thumbnail && (
+      <img src={post.data.thumbnail} alt={post.data.title} />
+    )}
+
+    <div>
+      <Content />
+    </div>
+  </article>
+</Layout>

@@ -1,0 +1,46 @@
+---
+import Layout from '@layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = Array.from(await getCollection('posts'));
+
+const sortedPosts = posts
+  .filter(post => !post.data.draft)
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+
+const categories = [...new Set(sortedPosts.flatMap(post => post.data.categories))].sort();
+---
+
+<Layout title="Blog" currentPage="posts">
+  <h1>Blog</h1>
+
+  <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+    <div style="flex: 3; min-width: 0;">
+      <ul class="post-list">
+        {sortedPosts.map(post => (
+          <li>
+            <span class="post-date">{new Date(post.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+            <h2 class="post-title"><a href={`/posts/${post.slug}/`}>{post.data.title}</a></h2>
+            {post.data.description && <p class="post-excerpt">{post.data.description}</p>}
+            {post.data.tags.length > 0 && (
+              <div class="post-tags">
+                {post.data.tags.map(tag => <span class="post-tag">{tag}</span>)}
+              </div>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div style="flex: 1; min-width: 180px;">
+      <h2>Topics</h2>
+      <ul style="list-style: none; padding: 0;">
+        {categories.map(cat => (
+          <li>
+            <a href={`/posts/?category=${encodeURIComponent(cat)}`}>{cat}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</Layout>

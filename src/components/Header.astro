@@ -1,0 +1,32 @@
+---
+interface Props {
+  currentPage: string;
+}
+
+const { currentPage } = Astro.props;
+
+const navItems = [
+  { label: 'Home', url: '/', active: currentPage === 'home' },
+  { label: 'Blog', url: '/posts/', active: currentPage === 'posts' },
+  { label: 'Topics', url: '/posts/', active: currentPage === 'topics' },
+  { label: 'Links', url: '/links/', active: currentPage === 'links' },
+  { label: 'Resume', url: '/about/', active: currentPage === 'about' },
+];
+---
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-title">linux-konsult.com</a>
+    <nav>
+      <ul class="site-nav">
+        {navItems.map(item => (
+          <li>
+            <a href={item.url} class:list={[item.active && 'active']}>
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>

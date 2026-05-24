@@ -1,0 +1,72 @@
+---
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  currentPage: string;
+  ogImage?: string;
+}
+
+const { title, description = 'linux-konsult.com', currentPage, ogImage = '/images/tn.png' } = Astro.props;
+
+const keywords = 'blog,devops,sustainability,esp8266,prometheus,grafana,kubernetes,linux,observability';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="Tom" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={Astro.site} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <title>{title} | linux-konsult.com</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <link href="/styles/global.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="fixed-bar">
+      Contact details <a href="mailto:tom@linux-konsult.com">tom@linux-konsult.com</a>
+    </div>
+
+    <Header currentPage={currentPage} />
+
+    <main class="main-content">
+      <div class="container">
+        <slot />
+      </div>
+    </main>
+
+    <Footer />
+
+    <script>
+      // Social sharing
+      const shareUrl = encodeURIComponent(Astro.url.href);
+      const shareTitle = encodeURIComponent(title);
+    </script>
+  </body>
+</html>
