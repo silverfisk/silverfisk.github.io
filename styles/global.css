@@ -1,0 +1,472 @@
+/* linux-konsult.com - Global Styles (ported from hugo-coder) */
+
+/* ===== Reset & Base ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #323232;
+  background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: #05b;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #039;
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== Fixed Top Bar ===== */
+.fixed-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.3rem;
+}
+
+.fixed-bar a {
+  color: #05b;
+  font-weight: 500;
+}
+
+.fixed-bar a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Header ===== */
+.site-header {
+  position: sticky;
+  top: 2rem;
+  z-index: 90;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(4px);
+  border-bottom: 1px solid #e0e0e0;
+  padding: 0.75rem 0;
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.site-title {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #323232;
+}
+
+.site-title:hover {
+  text-decoration: none;
+  color: #323232;
+}
+
+/* ===== Navigation ===== */
+.site-nav {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.site-nav a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #555;
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  color: #323232;
+  border-bottom-color: #05b;
+  text-decoration: none;
+}
+
+/* ===== Container ===== */
+.container {
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ===== Main Content ===== */
+.main-content {
+  flex: 1;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.main-content .container {
+  padding-top: 1rem;
+}
+
+/* ===== About Section ===== */
+.about-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.about-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid #e0e0e0;
+}
+
+.about-name {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #323232;
+  margin-bottom: 0.5rem;
+}
+
+.about-info {
+  font-size: 1rem;
+  color: #666;
+  max-width: 500px;
+  margin-bottom: 1rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  color: #555;
+  font-size: 1.5rem;
+  transition: color 0.2s ease;
+}
+
+.social-links a:hover {
+  color: #05b;
+  text-decoration: none;
+}
+
+/* ===== Posts / Blog Listing ===== */
+.post-list {
+  list-style: none;
+}
+
+.post-list li {
+  padding: 1rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.post-list li:last-child {
+  border-bottom: none;
+}
+
+.post-date {
+  display: block;
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 0.25rem;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.post-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  line-height: 1.3;
+}
+
+.post-title a {
+  color: #323232;
+}
+
+.post-title a:hover {
+  color: #05b;
+}
+
+.post-excerpt {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+/* ===== Tags ===== */
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.post-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-family: "IBM Plex Mono", monospace;
+  color: #555;
+  background-color: #f0f0f0;
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+}
+
+.post-tag s {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+/* ===== Links Page ===== */
+.links-list {
+  list-style: none;
+}
+
+.links-list li {
+  padding: 1rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.links-list li:last-child {
+  border-bottom: none;
+}
+
+.link-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.link-title a {
+  color: #323232;
+}
+
+.link-title a:hover {
+  color: #05b;
+}
+
+.link-desc {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* ===== Article / Single Post ===== */
+article {
+  max-width: 100%;
+}
+
+article h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #323232;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+article h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #323232;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+article h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #323232;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+article h4,
+article h5,
+article h6 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #323232;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+article p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+article ul,
+article ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+article li {
+  margin-bottom: 0.35rem;
+  line-height: 1.6;
+}
+
+article hr {
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin: 2rem 0;
+}
+
+article blockquote {
+  border-left: 4px solid #05b;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  background-color: #f9f9f9;
+  color: #555;
+}
+
+/* ===== Code ===== */
+code {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.88em;
+  background-color: #f5f5f5;
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+  color: #d63384;
+}
+
+pre {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+  tab-size: 4;
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  background-color: #f9f9f9;
+  border-top: 1px solid #e0e0e0;
+  padding: 1.5rem 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: auto;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  html {
+    font-size: 15px;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .site-header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .site-nav {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .about-header {
+    padding: 1rem 0;
+  }
+
+  .about-avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .about-name {
+    font-size: 1.5rem;
+  }
+
+  article h1 {
+    font-size: 1.5rem;
+  }
+
+  article h2 {
+    font-size: 1.25rem;
+  }
+}
+
+/* ===== Print ===== */
+@media print {
+  .fixed-bar,
+  .site-header,
+  .site-footer {
+    display: none;
+  }
+
+  body {
+    color: #000;
+    background: #fff;
+  }
+
+  a {
+    color: #000;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+}
